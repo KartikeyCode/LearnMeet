@@ -181,3 +181,4 @@ position = Vector2(182, -21)
 shape = SubResource("RectangleShape2D_2nhsp")
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
