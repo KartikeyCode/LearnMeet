@@ -3,18 +3,16 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 
-func _on_child_entered_tree(body):
-	if body is Player:
-		print(body)
-
 
 func _on_left_transition_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body is Player:
+		get_tree().change_scene_to_file("res://scenes/left.tscn")
+		Global.set_spawn_point(183,325)
+		print("Entering Left")

@@ -6,7 +6,10 @@ const speed = 100
 var current_direction = "none"
 
 func _ready():
+	position.x = Global.player_spawn_position_x
+	position.y = Global.player_spawn_position_y
 	$AnimatedSprite2D.play("front_idle")
+	
 	
 
 
