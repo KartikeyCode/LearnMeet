@@ -1,9 +1,13 @@
 extends Node2D
 
+@onready var welcome_sign_label: Label = $welcomeSign/Sign/popup/base/NinePatchRect/MarginContainer/VBoxContainer/Label
+@onready var left_sign_label: Label = $leftSign/Sign/popup/base/NinePatchRect/MarginContainer/VBoxContainer/Label
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	left_sign_label.text = "North: Playground \n East: StudyHall"
+							  
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
