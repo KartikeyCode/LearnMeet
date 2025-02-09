@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://c6hp0k1c7m13r"]
+[gd_scene load_steps=14 format=4 uid="uid://c6hp0k1c7m13r"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_8k4fx"]
 [ext_resource type="Texture2D" uid="uid://bpksyh1aneyxw" path="res://assets/sprites/tilesets/plains.png" id="1_v7bg0"]
@@ -6,8 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cmy1546yqa8it" path="res://assets/sprites/objects/objects.png" id="3_7jmqq"]
 [ext_resource type="Texture2D" uid="uid://cijxbftyddd3f" path="res://assets/sprites/tilesets/walls/walls.png" id="4_8qqub"]
 [ext_resource type="PackedScene" uid="uid://fpel7e6mbev1" path="res://scenes/player.tscn" id="4_yl3yb"]
-[ext_resource type="Script" path="res://scripts/sign.gd" id="7_ere4g"]
-[ext_resource type="PackedScene" uid="uid://ssxrc7w7m2fq" path="res://interactions/interaction area/interactionarea.tscn" id="7_l5ay8"]
+[ext_resource type="PackedScene" uid="uid://gbbldbhxqbyo" path="res://scenes/objects/sign.tscn" id="7_ouh51"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_62ohi"]
 texture = ExtResource("3_7jmqq")
@@ -147,12 +146,6 @@ sources/3 = SubResource("TileSetAtlasSource_2o631")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2nhsp"]
 size = Vector2(42, 42)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mn7tj"]
-size = Vector2(22, 22)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8ego"]
-size = Vector2(24, 24)
-
 [node name="world" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_8k4fx")
@@ -175,7 +168,7 @@ tile_set = SubResource("TileSet_sdkjj")
 
 [node name="player" parent="." instance=ExtResource("4_yl3yb")]
 y_sort_enabled = true
-position = Vector2(37, 249)
+position = Vector2(24, 248)
 
 [node name="collisions" type="StaticBody2D" parent="."]
 
@@ -188,19 +181,7 @@ polygon = PackedVector2Array(0, -4, 161, 0, 161, -42, 202, -43, 203, 0, 206, 0, 
 position = Vector2(182, -21)
 shape = SubResource("RectangleShape2D_2nhsp")
 
-[node name="Sign" type="StaticBody2D" parent="."]
-script = ExtResource("7_ere4g")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sign"]
-position = Vector2(88, 216)
-shape = SubResource("RectangleShape2D_mn7tj")
-
-[node name="interactionarea" parent="Sign" instance=ExtResource("7_l5ay8")]
-action_name = "Sign"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sign/interactionarea"]
-position = Vector2(88, 216)
-shape = SubResource("RectangleShape2D_d8ego")
+[node name="Sign" parent="." instance=ExtResource("7_ouh51")]
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="body_entered" from="left_transition" to="." method="_on_left_transition_body_entered"]

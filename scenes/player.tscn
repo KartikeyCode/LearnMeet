@@ -1,7 +1,8 @@
-[gd_scene load_steps=41 format=3 uid="uid://fpel7e6mbev1"]
+[gd_scene load_steps=42 format=3 uid="uid://fpel7e6mbev1"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_gegt3"]
 [ext_resource type="Texture2D" uid="uid://mv0v2x165fpt" path="res://assets/sprites/characters/player.png" id="2_xao0e"]
+[ext_resource type="PackedScene" uid="uid://d23bnurui6ahi" path="res://interaction_components/interacting_component.tscn" id="3_610od"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wl4j3"]
 atlas = ExtResource("2_xao0e")
@@ -314,3 +315,6 @@ limit_smoothed = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="InteractingComponent" parent="." instance=ExtResource("3_610od")]
+position = Vector2(1, -1)

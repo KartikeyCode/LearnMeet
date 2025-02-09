@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ssxrc7w7m2fq"]
-
-[ext_resource type="Script" path="res://interactions/interaction area/interactionarea.gd" id="1_yphvt"]
-
-[node name="interactionarea" type="Area2D"]
-script = ExtResource("1_yphvt")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]

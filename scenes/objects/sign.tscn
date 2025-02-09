@@ -1,3 +1,24 @@
-[gd_scene format=3 uid="uid://gbbldbhxqbyo"]
+[gd_scene load_steps=5 format=3 uid="uid://gbbldbhxqbyo"]
+
+[ext_resource type="Script" path="res://scenes/objects/sign.gd" id="1_08blc"]
+[ext_resource type="PackedScene" uid="uid://c1kc0aglbl2o0" path="res://interaction_components/interactable.tscn" id="1_vtvrh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00p8n"]
+size = Vector2(12, 5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mpxb2"]
+radius = 12.0
 
 [node name="Sign" type="StaticBody2D"]
+script = ExtResource("1_08blc")
+
+[node name="signcollision" type="CollisionShape2D" parent="."]
+position = Vector2(88, 219.5)
+shape = SubResource("RectangleShape2D_00p8n")
+
+[node name="Interactable" parent="." instance=ExtResource("1_vtvrh")]
+interact_name = "Press E to Read Sign"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(88, 220)
+shape = SubResource("CircleShape2D_mpxb2")
