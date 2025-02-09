@@ -182,6 +182,7 @@ position = Vector2(182, -21)
 shape = SubResource("RectangleShape2D_2nhsp")
 
 [node name="Sign" parent="." instance=ExtResource("7_ouh51")]
+position = Vector2(88, 219)
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="body_entered" from="left_transition" to="." method="_on_left_transition_body_entered"]

@@ -19,6 +19,11 @@ config/icon="res://assets/icon.svg"
 
 Global="*res://scripts/global.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [global_group]
 
 player="Player"
