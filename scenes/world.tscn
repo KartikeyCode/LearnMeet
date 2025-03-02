@@ -168,7 +168,7 @@ tile_set = SubResource("TileSet_sdkjj")
 
 [node name="player" parent="." instance=ExtResource("4_yl3yb")]
 y_sort_enabled = true
-position = Vector2(24, 248)
+position = Vector2(25, 236)
 
 [node name="collisions" type="StaticBody2D" parent="."]
 
