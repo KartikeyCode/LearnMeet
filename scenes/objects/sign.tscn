@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://gbbldbhxqbyo"]
 
-[ext_resource type="Script" path="res://scenes/objects/sign.gd" id="1_08blc"]
+[ext_resource type="Script" uid="uid://fxaa4owbnl2a" path="res://scenes/objects/sign.gd" id="1_08blc"]
 [ext_resource type="PackedScene" uid="uid://c1kc0aglbl2o0" path="res://interaction_components/interactable.tscn" id="1_vtvrh"]
 [ext_resource type="PackedScene" uid="uid://cb50odyifnr5c" path="res://ui/welcome_sign_open.tscn" id="3_gxuxm"]
 

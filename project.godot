@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Hwasee"
-run/main_scene="res://scenes/player.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+run/main_scene="res://scenes/world.tscn"
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
 [autoload]
@@ -23,6 +23,10 @@ Global="*res://scripts/global.gd"
 
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/protobuf/plugin.cfg")
 
 [global_group]
 
