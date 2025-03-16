@@ -13,7 +13,8 @@ func _ready() -> void:
 	packet.set_sender_id(69)
 	var chat_msg := packet.new_chat()
 	chat_msg.set_msg("Hello!")
-	push_warning(packet)							  
+	push_warning(packet)			
+	var data := packet.to_bytes()				  
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
