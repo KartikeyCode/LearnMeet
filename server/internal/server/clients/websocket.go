@@ -19,14 +19,14 @@ type WebSocketClient struct {
 	logger   *log.Logger
 }
 
-func NewWebSocketClient(hub *server.Hub, writer *http.ResponseWriter, request *http.Request) (server.ClientInterfacer, error) {
+func NewWebSocketClient(hub *server.Hub, writer http.ResponseWriter, request *http.Request) (server.ClientInterfacer, error) {
 	upgrader := websocket.Upgrader{
 		ReadBufferSize:  1024,
 		WriteBufferSize: 1024,
 		CheckOrigin:     func(_ *http.Request) bool { return true },
 	}
 
-	conn, err := upgrader.Upgrade(*writer, request, nil)
+	conn, err := upgrader.Upgrade(writer, request, nil)
 
 	if err != nil {
 		return nil, err
@@ -142,6 +142,11 @@ func (c *WebSocketClient) WritePump() {
 	}
 }
 
-func (C *WebSocketClient) Close(reason string) {
-
+func (c *WebSocketClient) Close(reason string) {
+	c.logger.Printf("closing client connection... Reason: %s", reason)
+	c.hub.UnregisterChan <- c
+	c.conn.Close()
+	if _, closed := <-c.sendChan; !closed {
+		close(c.sendChan)
+	}
 }
