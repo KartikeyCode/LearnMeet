@@ -24,5 +24,6 @@ shape = SubResource("CircleShape2D_mpxb2")
 shape = SubResource("RectangleShape2D_00p8n")
 
 [node name="Sign" parent="." instance=ExtResource("3_gxuxm")]
+visible = false
 offset_top = -48.0
 offset_bottom = -48.0

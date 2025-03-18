@@ -8,6 +8,7 @@ const packets := preload("res://scripts/packets.gd")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	welcome_sign_label.text = "Hello! \n Welcome to LearnMeet"
 	left_sign_label.text = "North: Playground \n East: StudyHall"
 	var packet := packets.Packet.new()
 	packet.set_sender_id(69)
