@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfm3m5kc16kg8"]
+
+[ext_resource type="Script" uid="uid://b1rw1bg0n0elt" path="res://scenes/log/log.gd" id="1_3irbi"]
+
+[node name="Log" type="RichTextLabel"]
+z_index = 100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+bbcode_enabled = true
+scroll_following = true
+script = ExtResource("1_3irbi")
