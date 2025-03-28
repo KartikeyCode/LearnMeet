@@ -19,6 +19,7 @@ config/icon="res://assets/icon.svg"
 
 Global="*res://scripts/global.gd"
 WS="*res://client/websocket_client.gd"
+GameManager="*res://game_manager.gd"
 
 [display]
 

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgkfaex0n20kb"]
+
+[ext_resource type="Script" uid="uid://bldk438eq2d2w" path="res://states/entered/entered.gd" id="1_ltgjr"]
+[ext_resource type="Script" uid="uid://b1rw1bg0n0elt" path="res://scenes/log/log.gd" id="2_ltgjr"]
+
+[node name="Entered" type="Node"]
+script = ExtResource("1_ltgjr")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="LineEdit" type="LineEdit" parent="UI"]
+offset_left = 22.0
+offset_top = 594.0
+offset_right = 713.0
+offset_bottom = 625.0
+
+[node name="Log" type="RichTextLabel" parent="UI"]
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 468.0
+offset_bottom = 451.0
+bbcode_enabled = true
+script = ExtResource("2_ltgjr")
+metadata/_custom_type_script = "uid://b1rw1bg0n0elt"

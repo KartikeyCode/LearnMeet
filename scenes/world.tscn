@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://c6hp0k1c7m13r"]
+[gd_scene load_steps=14 format=4 uid="uid://c6hp0k1c7m13r"]
 
 [ext_resource type="Script" uid="uid://b5o3iwoyvnfkh" path="res://scripts/world.gd" id="1_8k4fx"]
 [ext_resource type="Texture2D" uid="uid://bpksyh1aneyxw" path="res://assets/sprites/tilesets/plains.png" id="1_v7bg0"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cijxbftyddd3f" path="res://assets/sprites/tilesets/walls/walls.png" id="4_8qqub"]
 [ext_resource type="PackedScene" uid="uid://fpel7e6mbev1" path="res://scenes/player.tscn" id="4_yl3yb"]
 [ext_resource type="PackedScene" uid="uid://gbbldbhxqbyo" path="res://scenes/objects/sign.tscn" id="7_ouh51"]
-[ext_resource type="PackedScene" uid="uid://cfm3m5kc16kg8" path="res://scenes/log/log.tscn" id="8_4mrxx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_62ohi"]
 texture = ExtResource("3_7jmqq")
@@ -150,14 +149,6 @@ size = Vector2(42, 42)
 [node name="world" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_8k4fx")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Log" parent="CanvasLayer" instance=ExtResource("8_4mrxx")]
-offset_left = 14.0
-offset_top = 9.0
-offset_right = -339.0
-offset_bottom = -311.0
 
 [node name="Ground" type="TileMapLayer" parent="."]
 use_parent_material = true

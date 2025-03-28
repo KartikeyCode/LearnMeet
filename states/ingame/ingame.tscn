@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl10l52bwj30x"]
+
+[ext_resource type="Script" uid="uid://dkgeydinrb2n8" path="res://states/ingame/ingame.gd" id="1_0uskn"]
+[ext_resource type="Script" uid="uid://b1rw1bg0n0elt" path="res://scenes/log/log.gd" id="2_q22go"]
+
+[node name="InGame" type="Node"]
+script = ExtResource("1_0uskn")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="LineEdit" type="LineEdit" parent="UI"]
+offset_left = 22.0
+offset_top = 594.0
+offset_right = 713.0
+offset_bottom = 625.0
+
+[node name="Log" type="RichTextLabel" parent="UI"]
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 468.0
+offset_bottom = 451.0
+bbcode_enabled = true
+script = ExtResource("2_q22go")
+metadata/_custom_type_script = "uid://b1rw1bg0n0elt"

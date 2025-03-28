@@ -7,6 +7,20 @@ import (
 	"server/pkg/packets"
 )
 
+// A structure for a state machine to process the client's messages
+type ClientStateHandler interface {
+	Name() string
+
+	//Inject the client into the state handler
+	SetClient(client ClientInterfacer)
+
+	OnEnter()
+	HandleMessage(senderId uint64, message packets.Msg)
+
+	//cleanup the state handler and perform any last actions
+	OnExit()
+}
+
 type ClientInterfacer interface {
 
 	//return client id
@@ -17,6 +31,9 @@ type ClientInterfacer interface {
 
 	//set client Id and other things that need to be initialized
 	Initialize(id uint64)
+
+	//sets the state
+	SetState(newState ClientStateHandler)
 
 	// puts data from client into write pump
 	SocketSend(message packets.Msg)
